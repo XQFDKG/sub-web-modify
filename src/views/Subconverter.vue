@@ -313,7 +313,7 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
        customBackend: {
-        "Akashi的CF后端": "https://akashi1.1137227548.workers.dev?",
+        "Akashi自用后端": "https://akashi1.1137227548.workers.dev?",
                         "Akashi的Vercel后端": "https://akashi-six.vercel.app/sub?",
                         "本地转换后端": "http://127.0.0.1:25500/sub?",
                         },
