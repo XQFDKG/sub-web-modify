@@ -323,8 +323,8 @@ export default {
            label: "Myconfig",
             options: [
               {
-                label: "Pro",
-                value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/AnthonCloud.ini"
+                label: "免流分流",
+                value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/akashi.ini"
               },
               {
                 label: "Mini",
