@@ -327,7 +327,7 @@ export default {
                 value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/akashi.ini"
               },
               {
-                label: "Mini",
+                label: "精简自动选择",
                 value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/ACmini.ini"
               }
             ]
