@@ -274,13 +274,16 @@ const yglink = process.env.VUE_APP_YOUTUBE_LINK
 const bzlink = process.env.VUE_APP_BILIBILI_LINK
 const downld = process.env.VUE_APP_CFA 
 const bmvideo = process.env.VUE_APP_VIDEO
+
 export default {
   data() {
     return {
       backendVersion: "",
       advanced: "2",
+
       // 是否为 PC 端
       isPC: true,
+
       options: {
         clientTypes: {
           Clash: "clash",
@@ -310,13 +313,28 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
        customBackend: {
-        "Akashi自用后端": "https://akashi1.1137227548.workers.dev/sub?",
+        "Akashi的CF后端": "https://akashi1.1137227548.workers.dev?",
+                        "Akashi的Vercel后端": "https://akashi-six.vercel.app/sub?",
                         "本地转换后端": "http://127.0.0.1:25500/sub?",
                         },
         backendOptions: [{ value: "https://akashi1.1137227548.workers.dev/sub?" },
+                          { value: "https://akashi-six.vercel.app/sub?" },
                           { value: "http://127.0.0.1:25500/sub?" },
         ],
-        remoteConfig: [
+        remoteConfig: [	
+          {
+           label: "Myconfig",
+            options: [
+              {
+                label: "精简规则",
+                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini"
+              },
+              {
+                label: "精简自动选择",
+                value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/ACmini.ini"
+              }
+            ]
+          },	      
           {
            label: "ACL规则",
             options: [
@@ -669,7 +687,7 @@ export default {
         clientType: "clash",
         customBackend: "https://akashi1.1137227548.workers.dev/sub?",
         shortType: "https://suo.yt/short",
-        remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini",
+        remoteConfig: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/ACmini.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -686,6 +704,7 @@ export default {
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
+
         // tpl 定制功能
         tpl: {
           surge: {
@@ -696,9 +715,11 @@ export default {
           }
         }
       },
+
       loading: false,
       customSubUrl: "",
       curtomShortSubUrl: "",
+
       dialogUploadConfigVisible: false,
       uploadConfig: "",
       uploadPassword: "",
@@ -768,7 +789,7 @@ export default {
         position: 'top-left',
         customClass: 'msgbox',
         message: (
-          "不会看后端！"
+          "不会查看后端！"
         )
       });
     },
@@ -801,6 +822,7 @@ export default {
         this.$message.error("请先填写必填项，生成订阅链接");
         return false;
       }
+
       const url = "clash://install-config?url=";
       window.open(
         url +
@@ -816,6 +838,7 @@ export default {
         this.$message.error("请先填写必填项，生成订阅链接");
         return false;
       }
+
       const url = "surge://install-config?url=";
       window.open(url + this.customSubUrl);
     },
@@ -844,12 +867,15 @@ export default {
         });
         return false;
       }
+
       let backend =
         this.form.customBackend === ""
           ? defaultBackend
           : this.form.customBackend;
+
       let sourceSub = this.form.sourceSubUrl;
       sourceSub = sourceSub.replace(/(\n|\r|\n\r)/g, "|");
+
       this.customSubUrl =
         backend +
         "target=" +
@@ -858,6 +884,7 @@ export default {
         encodeURIComponent(sourceSub) +
         "&insert=" +
         this.form.insert;
+
       if (this.advanced === "2") {
         if (this.form.remoteConfig !== "") {
           this.customSubUrl +=
@@ -883,6 +910,7 @@ export default {
           this.customSubUrl +=
             "&append_type=" + this.form.appendType.toString();
         }
+
         this.customSubUrl +=
           "&emoji=" +
           this.form.emoji.toString() +
@@ -900,16 +928,20 @@ export default {
           this.form.fdn.toString() +
           "&sort=" +
           this.form.sort.toString();
+
         if (this.form.tpl.surge.doh === true) {
           this.customSubUrl += "&surge.doh=true";
         }
+
         if (this.form.clientType === "clash") {
           if (this.form.tpl.clash.doh === true) {
             this.customSubUrl += "&clash.doh=true";
           }
+
           this.customSubUrl += "&new_name=" + this.form.new_name.toString();
         }
       }
+
       this.$copyText(this.customSubUrl);
       this.$message.success("定制订阅已复制到剪贴板");
     },
@@ -925,8 +957,10 @@ export default {
           : this.form.shortType;
       
       this.loading = true;
+
       let data = new FormData();
       data.append("longUrl", btoa(this.customSubUrl));
+
       this.$axios
         .post(duan, data, {
           header: {
@@ -954,10 +988,13 @@ export default {
         this.$message.warning("远程配置不能为空");
         return false;
       }
+
       this.loading = true;
+
       let data = new FormData();
       data.append("password", this.uploadPassword);
       data.append("config", this.uploadConfig);
+
       this.$axios
         .post(configUploadBackend, data, {
           header: {
@@ -969,9 +1006,11 @@ export default {
             this.$message.success(
               "远程配置上传成功，配置链接已复制到剪贴板，有效期三个月望知悉"
             );
+
             // 自动填充至『表单-远程配置』
             this.form.remoteConfig = res.data.data.url;
             this.$copyText(this.form.remoteConfig);
+
             this.dialogUploadConfigVisible = false;
           } else {
             this.$message.error("远程配置上传失败: " + res.data.msg);
@@ -986,9 +1025,11 @@ export default {
     },
     backendSearch(queryString, cb) {
       let backends = this.options.backendOptions;
+
       let results = queryString
         ? backends.filter(this.createFilter(queryString))
         : backends;
+
       // 调用 callback 返回建议列表的数据
       cb(results);
     },
