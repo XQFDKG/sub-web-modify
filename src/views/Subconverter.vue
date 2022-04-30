@@ -313,12 +313,10 @@ export default {
         "Akashi自用后端": "https://ak.1137227548.workers.dev/sub?",
                         "akashi-six.vercel.app": "https://akashi-six.vercel.app/sub?",
                         "本地转换后端": "http://127.0.0.1:25500/sub?",
-			"肥羊增强型后端【vless+负载均衡】":"https://api.v1.mk/sub?",
                         },
         backendOptions: [{ value: "https://ak.1137227548.workers.dev/sub?" },
                           { value: "https://akashi-six.vercel.app/sub?" },
                           { value: "http://127.0.0.1:25500/sub?" },
-			  { value: "https://api.v1.mk/sub?" },
         ],
         remoteConfig: [	
           {
