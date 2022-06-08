@@ -310,12 +310,10 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
        customBackend: {
-        "Akashi自用后端": "https://ak.1137227548.workers.dev/sub?",
-                        "akashi-six.vercel.app": "https://akashi-six.vercel.app/sub?",
+        "Akashi自用后端": "https://akashi-six.vercel.app/sub?",
                         "本地转换后端": "http://127.0.0.1:25500/sub?",
                         },
-        backendOptions: [{ value: "https://ak.1137227548.workers.dev/sub?" },
-                          { value: "https://akashi-six.vercel.app/sub?" },
+        backendOptions: [{ value: "https://akashi-six.vercel.app/sub?" },
                           { value: "http://127.0.0.1:25500/sub?" },
         ],
         remoteConfig: [	
@@ -682,7 +680,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "clash",
-        customBackend: "https://ak.1137227548.workers.dev/sub?",
+        customBackend: "https://akashi-six.vercel.app/sub?",
         shortType: "https://suo.yt/short",
         remoteConfig: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini",
         excludeRemarks: "",
