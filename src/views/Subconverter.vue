@@ -322,11 +322,11 @@ export default {
             options: [
               {
                 label: "免流分流",
-                value: "https://raw.githubusercontent.com/Ooui/now-subconverter/master/akashi.ini"
+                value: "https://ghproxy.com/https://raw.githubusercontent.com/Ooui/now-subconverter/master/akashi.ini"
               },
               {
                 label: "精简自动选择",
-                value: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini"
+                value: "https://ghproxy.com/https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini"
               }
             ]
           },	      
@@ -682,7 +682,7 @@ export default {
         clientType: "clash",
         customBackend: "https://api.wcc.best/sub?",
         shortType: "https://suo.yt/short",
-        remoteConfig: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini",
+        remoteConfig: "https://ghproxy.com/https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
