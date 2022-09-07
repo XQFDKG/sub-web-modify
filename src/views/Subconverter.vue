@@ -311,10 +311,10 @@ export default {
         },
        customBackend: {
         "自用后端": "https://api.wcc.best/sub?",
-                        "备用后端": "https://ak.1137227548.workers.dev/sub?",
+                        "备用后端": "https://www.nameless13.com/sub?",
                         },
         backendOptions: [{ value: "https://api.wcc.best/sub?" },
-                          { value: "https://ak.1137227548.workers.dev/sub?" },
+                          { value: "https://www.nameless13.com/sub?" },
         ],
         remoteConfig: [	
           {
