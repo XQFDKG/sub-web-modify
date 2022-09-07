@@ -310,11 +310,11 @@ export default {
          "sub.cm":"https://sub.cm/short",
         },
        customBackend: {
-        "Akashi自用后端": "https://ak.1137227548.workers.dev/sub?",
-                        "备用后端": "https://api-sub.bug404.workers.dev/sub?",
+        "自用后端": "https://api.wcc.best/sub?",
+                        "肥羊后端vless": "https://api.v1.mk/sub?",
                         },
-        backendOptions: [{ value: "https://ak.1137227548.workers.dev/sub?" },
-                          { value: "https://api-sub.bug404.workers.dev/sub?" },
+        backendOptions: [{ value: "https://api.wcc.best/sub?" },
+                          { value: "https://api.v1.mk/sub?" },
         ],
         remoteConfig: [	
           {
@@ -680,7 +680,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "clash",
-        customBackend: "https://ak.1137227548.workers.dev/sub?",
+        customBackend: "https://api.wcc.best/sub?",
         shortType: "https://suo.yt/short",
         remoteConfig: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini",
         excludeRemarks: "",
