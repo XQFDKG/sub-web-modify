@@ -326,7 +326,7 @@ export default {
               },
               {
                 label: "精简自动选择",
-                value: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini"
+                value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini"
               }
             ]
           },	      
@@ -682,7 +682,7 @@ export default {
         clientType: "clash",
         customBackend: "https://api.wcc.best/sub?",
         shortType: "https://suo.yt/short",
-        remoteConfig: "https://raw.githubusercontent.com/Ak-yyds/now-subconverter/master/ACmini.ini",
+        remoteConfig: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
